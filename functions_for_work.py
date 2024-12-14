@@ -38,4 +38,23 @@ def generate_random_number_for_arr(length):
     return number_array
 
 
+# Ввод массива точек от пользователя
+def input_points():
+    num_points = int(input("Введите количество точек: "))
+    points = []
+    for i in range(num_points):
+        point = tuple(map(int, input(f"Введите координаты точки через пробел {i+1} (x y): ").split()))
+        points.append(point)
+    return points
 
+# Генерация случайных точек
+def generate_random_points(num_points, max_value=100):
+    return [(random.randint(0, max_value), random.randint(0, max_value)) for _ in range(num_points)]
+
+if __name__ == "__main__":
+    array1 = []
+    array1 = input_points()
+
+    array2 = generate_random_points(2)
+    print(array1)
+    print(array2)
