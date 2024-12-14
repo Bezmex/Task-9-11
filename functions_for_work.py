@@ -38,9 +38,4 @@ def generate_random_number_for_arr(length):
     return number_array
 
 
-if __name__ == "__main__":
-    array1 = []
-    array2 = []
-    array1 = generate_random_number_for_arr(5)
-    array2 = input_large_number_for_arr()
-    print(array1, array2)
+
