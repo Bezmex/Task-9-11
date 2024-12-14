@@ -2,18 +2,6 @@
 
 from functions_for_work import *
 
-#Алгоритм поиска одинаковых чисел в массивах
-def count_same_numbers(array1, array2):
-    result = 0
-    for i in array1:
-        for j in array2:
-            if i == j or str(i)[::-1] == str(j):
-                result += 1
-
-    print("\nАлгоритм выполнен\n")
-    return result
-
-
 def input_numbers_mas(array1, array2):
     """
     Функция для ввода двух массивов чисел.
