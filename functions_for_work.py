@@ -14,7 +14,7 @@ def is_int(choice):
     except (Exception, ValueError, TypeError):
         return False
 
-#Ввод массива чисел
+#Ввод массива
 def input_array():
     input_str = input("Введите числа через пробел для массива: ")
     number_array = [int(number) for number in input_str.split()]
