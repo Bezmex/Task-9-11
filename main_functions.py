@@ -42,7 +42,29 @@ def input_numbers_mas(array1, array2):
     print("Второй массив:", array2)
     return array1, array2
 
+
+def sum_or_dif_of_array():
+    array1 = [11, 12, 13, 14]
+    array2 = [15, 16, 17, 18]
+    print("Выберите находить сумму или разность массивов:\n"
+          "1. Сумму\n"
+          "2. Разность")
+    operation_choice = input()
+    if is_int(operation_choice):
+        operation_choice = int(operation_choice)
+
+    if operation_choice == 1:
+        sum1 = sum(number for number in array1)
+        sum2 = sum(number for number in array2)
+        return sum1+sum2
+
+    elif operation_choice == 2:
+        sum1 = sum(number for number in array1)
+        sum2 = sum(number for number in array2)
+        return sum1-sum2
+    else:
+        print("Ошибка выбора")
+
 if __name__ == "__main__":
-    array1 = [35, 67, 33]
-    array2 = [53, 312, 123]
-    print(count_same_numbers(array1, array2))
+    result = sum_or_dif_of_array()
+    print(result)
