@@ -1,4 +1,6 @@
 #Функции обработки данных
+import math
+from array import array
 
 from functions_for_work import *
 
@@ -43,9 +45,7 @@ def input_numbers_mas(array1, array2):
     return array1, array2
 
 
-def sum_or_dif_of_array():
-    array1 = [11, 12, 13, 14]
-    array2 = [15, 16, 17, 18]
+def sum_or_dif_of_array(array1, array2):
     print("Выберите находить сумму или разность массивов:\n"
           "1. Сумму\n"
           "2. Разность")
@@ -65,6 +65,25 @@ def sum_or_dif_of_array():
     else:
         print("Ошибка выбора")
 
+
+# Вычисление расстояния между двумя точками
+def distance(point1, point2):
+    return math.sqrt((point1[0] - point2[0])**2 + (point1[1] - point2[1])**2)
+
+#Сверяем расстояние с данным числом
+def find_points_bigger_distance(array1, array2, number_for_compare):
+    # Инициализация массива для хранения результатов
+    points_array = []
+
+    for point1, point2 in zip(array1, array2):
+        if distance(point1, point2) > number_for_compare:
+            points_array.append((point1, point2))
+
+    return points_array
+
 if __name__ == "__main__":
-    result = sum_or_dif_of_array()
-    print(result)
+    array1 = [(1, 2), (3, 4)]
+    array2 = [(7, 8), (5, 6)]
+
+    result = find_points_bigger_distance(array1, array2, 1)
+    print(f"Пары точек: {result}")
